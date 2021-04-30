@@ -1,0 +1,19 @@
+[package]
+name = "xml_tomongo"
+version = "0.1.0"
+authors = ["AlexLeo99 <baker-plan-b@hotmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+encoding_rs = "0.8.22"
+encoding_rs_io = "0.1.7"
+walkdir = "2.3.2"
+zip = "0.5"
+xmlJSON = "0.2.0"
+rustc-serialize = "0.3"
+serde_json = "1.0.64"
+mongodb = "1.2.1"
+bson = "1.2.1"
+tokio = { version = "0.2", features = ["macros", "rt-threaded"]  }
