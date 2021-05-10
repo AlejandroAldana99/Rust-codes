@@ -20,7 +20,7 @@
 
 3.	Run "cargo update" forn search the updates
 
-4.  After, run "cargo build" and finally run "cargo run <env>" (default dev)
+4.	After, run "cargo build" and finally run "cargo run <env>" (default dev)
 
-4.	Get the result of the process
+5.	Get the result of the process
 ````
