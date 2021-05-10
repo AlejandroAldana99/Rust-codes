@@ -27,5 +27,5 @@
 
 4.	After, run "cargo build" and finally run "cargo run <env> <option>" (default dev)
 
-5.	Get the result of the process
+5.	Check the data base for see the results of the each process
 ````
