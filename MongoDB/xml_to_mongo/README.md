@@ -3,13 +3,9 @@
 > Enviroments:
 ````
 - dev
-
 - qa
-
 - prod
-
 - test
-
 ````
 
 > Process:

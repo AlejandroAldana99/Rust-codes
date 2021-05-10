@@ -3,13 +3,9 @@
 > Enviroments:
 ````
 - dev
-
 - qa
-
 - prod
-
 - test
-
 ````
 
 > Options:
@@ -19,7 +15,6 @@
 - insert: Insert a default option
 
 - delete: Delete a default option
-
 ````
 
 > Process:
