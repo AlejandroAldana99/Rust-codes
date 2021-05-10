@@ -25,7 +25,11 @@
 
 3.	Run "cargo update" forn search the updates
 
-4.	After, run "cargo build" and finally run "cargo run <env> <option>" (default dev)
+4.	After, run "cargo build" and finally run "cargo run <env> <option>"
 
-5.	Check the data base for see the results of the each process
+5.	First, use the option "insert" for generate data in Mongo
+
+6.	After, you can delete the information or find it
+
+7.	Check the data base for see the results of the each process
 ````
