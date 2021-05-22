@@ -1,0 +1,19 @@
+[package]
+name = "simple_server"
+version = "0.1.0"
+authors = ["AlexLeo99 <baker-plan-b@hotmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+mongodb = "0.9.2"
+actix-web = "2"
+actix-rt = "1"
+bson = "0.14.0"
+serde = "1.0.103"
+futures = "0.3.4"
+env_logger = "0.7"
+dotenv = "0.15.0"
+actix-cors = "0.2.0"
+serde_json = "1.0"
