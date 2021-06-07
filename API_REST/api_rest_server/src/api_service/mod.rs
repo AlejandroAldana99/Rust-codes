@@ -1,24 +1,26 @@
+// External imports
 use bson::{doc, Document};
 use mongodb::results::{DeleteResult, UpdateResult, InsertOneResult};
 use mongodb::{error::Error, Collection};
 use serde::{Deserialize, Serialize};
-
+// External constructors
 extern crate serde;
 extern crate serde_json;
 
+// Estructure data for DB
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Data {
     pub title: String,
     pub author: String,
 }
 
+// Reference colection clone
 #[derive(Clone)]
 pub struct ApiService {
     collection: Collection,
 }
 
-
-/// Transform user to mongo db document
+// Transform data to mongo db document
 fn data_to_document(data: &Data) -> Document {
     let Data {
         title,
@@ -30,27 +32,24 @@ fn data_to_document(data: &Data) -> Document {
     }
 }
 
+// Functions with quieries to Mongo
 impl ApiService {
     pub fn new(collection: Collection) -> ApiService {
         ApiService { collection }
     }
 
-    /// Insert user in mongo db (user)
+    // Insert data to Mongo DB
     pub fn create(&self, _data:&Data) -> Result<InsertOneResult, Error> {
         self.collection.insert_one(data_to_document(_data), None)
     }
 
-    /// Update existing user in mongo db (email)
+    // Update an existing document 
     pub fn update(&self, _data:&Data, _param: &String) -> Result<UpdateResult, Error> {
-        // let Data {
-        //     title: _title,
-        //     author: _author,
-        // } = _data;
         let object_param = bson::oid::ObjectId::with_string(_param).unwrap();
         self.collection.update_one(doc! { "_id": object_param }, data_to_document(_data), None)
     }
 
-    /// Delete existing user in mongo db (email)
+    // Delete some document
     pub fn delete(&self, _title: &String) -> Result<DeleteResult, Error> {
         self.collection.delete_one(doc! { "title": _title }, None)
     }
@@ -62,7 +61,7 @@ impl ApiService {
         Ok(docs)
     }
 
-    /// Retrieve parameter
+    // Get documents with quiery
     pub fn get_by(&self, param: &String) -> std::result::Result<std::vec::Vec<bson::ordered::OrderedDocument>, mongodb::error::Error> {
         let cursor = self.collection.find(doc! { "author": { "$regex": param } }, None).ok().expect("Failed to execute find.");
         let docs: Vec<_> = cursor.map(|doc| doc.unwrap()).collect();
