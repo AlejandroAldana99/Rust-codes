@@ -1,6 +1,7 @@
 # Rust-codes
 This repository is for easy or simple rust lang projects
 
+<br>
 
 > Execution:
 ```
@@ -13,4 +14,6 @@ Now, run "Cargo build"
 And finally, run "Cargo Run"
 ```
 
-NOTE: Some projects need System Parameters, these parameters are sent in the "Run" command as "Cargo Run <Parameter_1> <Parameter_2> ..."
+<br>
+
+> NOTE: Some projects need System Parameters, these parameters are sent in the "Run" command as "Cargo Run <Parameter_1> <Parameter_2> ..."
